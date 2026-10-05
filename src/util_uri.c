@@ -291,7 +291,7 @@ void UTIL_CTX_log(UTIL_CTX *ctx, int level, const char *format, ...)
 	va_end(args);
 }
 
-static char *dump_hex(unsigned char *val, const size_t len)
+char *dump_hex(unsigned char *val, const size_t len)
 {
 	int j = 0;
 	size_t i, size = 2 * len + 1;
@@ -993,7 +993,7 @@ void util_parsed_free(PARSED *parsed)
 /* Utilities common to public, private key and certificate handling           */
 /******************************************************************************/
 
-static int util_ctx_parse_uri(UTIL_CTX *ctx, PARSED *parsed,
+int util_ctx_parse_uri(UTIL_CTX *ctx, PARSED *parsed,
 		const char *object_typestr, const char *object_uri)
 {
 	PKCS11_SLOT *slot;
